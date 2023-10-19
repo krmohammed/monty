@@ -1,5 +1,5 @@
-#ifndef A_H
-#define A_H
+#ifndef MAIN_H
+#define MAIN_H
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -48,16 +48,16 @@ typedef struct instruction_s
  *
  */
 
-typedef struct everywher_s
+typedef struct everywhere_s
 {
 	FILE *file;
 	char *line;
 	char *com;
-} everywher_t;
-extern everywher_t every;
+} everywhere_t;
+extern everywhere_t every;
 
-void error_usage();
-void failed_malloc();
+void error_usage(void);
+void failed_malloc(void);
 void file_error(char *filename);
 void execution(FILE *file, char *line, stack_t **stack, int line_num);
 int isnumber(char *nums);
