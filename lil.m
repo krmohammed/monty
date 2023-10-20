@@ -1,16 +1,12 @@
-queue
-push a
-push 2
-push 3
-pall
-stack
-push 4
-push 5
-push 6
-pall
-add
-pall
-queue
-push 11111
-add
-pall
+push 72
+push -1
+push 110
+push 111
+push 116
+push 114
+push 101
+push 98
+push 108
+push 111
+push 72
+pstr
