@@ -67,7 +67,7 @@ void pstr(stack_t **stack, unsigned int line_number)
 	tmp = *stack;
 	while (tmp && tmp->n != 0)
 	{
-		if ((*stack)->n >= 100 || (*stack)->n <= 127)
+		if ((*stack)->n >= 0 || (*stack)->n <= 127)
 		{
 			putchar(tmp->n);
 			tmp = tmp->next;
