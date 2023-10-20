@@ -63,7 +63,7 @@ void pstr(stack_t **stack, unsigned int line_number)
 		putchar('\n');
 
 	tmp = *stack;
-	while(tmp && tmp->n != 0)
+	while (tmp && tmp->n != 0)
 	{
 		if ((*stack)->n >= 0 || (*stack)->n <= 127)
 		{
@@ -91,7 +91,7 @@ void rotl(stack_t **stack, unsigned int line_number)
 	if (*stack == NULL || (*stack)->next == NULL)
 		return;
 	tmp = *stack;
-	while(tmp->next != NULL)
+	while (tmp->next != NULL)
 		tmp = tmp->next;
 	tmp->next = *stack;
 	(*stack)->prev = tmp;
@@ -116,7 +116,7 @@ void rotr(stack_t **stack, unsigned int line_number)
 	if (*stack == NULL || (*stack)->next == NULL)
 		return;
 	tmp = *stack;
-	while(tmp->next != NULL)
+	while (tmp->next != NULL)
 		tmp = tmp->next;
 	tmp->next = *stack;
 	(*stack)->prev = tmp;

@@ -49,7 +49,7 @@ void queue_push(stack_t **queue, int data)
 	else
 	{
 		ptr2 = *queue;
-		while(ptr2->next)
+		while (ptr2->next)
 			ptr2 = ptr2->next;
 		ptr2->next = ptr1;
 		ptr1->prev = ptr2;
@@ -75,7 +75,7 @@ void stack_mode(stack_t **stack, unsigned int line_number)
 
 /**
  * queue_mode - switched mode to queue type
- * @stack: stack type
+ * @queue: stack type
  * @line_number: line number of monty file
  *
  */

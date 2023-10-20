@@ -2,6 +2,13 @@
 
 everywher_t every = {NULL, 1};
 
+/**
+ * main - entry point to the program
+ * @argc: argument count
+ * @argv: argument vector
+ *
+ * Return: 0 (always)
+ */
 int main(int argc, char **argv)
 {
 	FILE *fd;

@@ -91,7 +91,7 @@ void pop(stack_t **stack, unsigned int line_number)
 /**
  * swap - swaps the top two elements of the stack/queue
  * @stack: stack type
- * @line_number - line number of monty file
+ * @line_number: line number of monty file
  *
  */
 

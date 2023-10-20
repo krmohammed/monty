@@ -22,7 +22,7 @@ void add(stack_t **stack, unsigned int line_number)
 	(*stack) = tmp->next;
 	(*stack)->prev = NULL;
 	(*stack)->n = sum;
-	
+
 	free(tmp);
 }
 
@@ -67,7 +67,7 @@ void sub(stack_t **stack, unsigned int line_number)
 
 
 /**
- * div - divides the second top element by the top element
+ * division - divides the second top element by the top element
  * @stack: stack type
  * @line_number: line number of monty file
  *
@@ -98,7 +98,7 @@ void division(stack_t **stack, unsigned int line_number)
 
 
 /**
- * mod - computes the remainder of a division
+ * modu - computes the remainder of a division
  * @stack: stack type
  * @line_number: line number of monty file
  *

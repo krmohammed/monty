@@ -56,8 +56,8 @@ typedef struct everywher_s
 
 extern everywher_t every;
 
-void error_usage();
-void failed_malloc();
+void error_usage(void);
+void failed_malloc(void);
 void file_error(char *filename);
 void execution(FILE *file, char *line, stack_t **stack, int line_num);
 int isnumber(char *nums);
