@@ -41,7 +41,7 @@ void pchar(stack_t **stack, unsigned int line_number)
 		myFree(*stack);
 		failed();
 	}
-	if ((*stack)->n < 122 || (*stack)->n > 127)
+	if ((*stack)->n < 0 || (*stack)->n > 127)
 	{
 		fprintf(stderr, "L%d: can't pchar, value out of range\n", line_number);
 		myFree(*stack);
