@@ -1,5 +1,5 @@
-#ifndef A_H
-#define A_H
+#ifndef MONTY_H
+#define MONTY_H
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -38,10 +38,9 @@ typedef struct instruction_s
 } instruction_t;
 
 /**
- * struct everywhere_s - global operations
- * @file: file
- * @line: line
+ * struct everywher_s - global operations
  * @com: argument
+ * @mode: changes mode between stack/queue
  *
  * Description: global operations
  * for stack and queues
