@@ -1,6 +1,6 @@
 #include "monty.h"
 
-everywher_t every = {NULL, 1};
+everywher_t every = {NULL, NULL, NULL, 1};
 
 /**
  * main - entry point to the program
@@ -25,14 +25,17 @@ int main(int argc, char **argv)
 	if (fd == NULL)
 		file_error(argv[1]);
 
+	every.file = fd;
 	while ((get = getline(&line, &len, fd)) != -1)
 	{
+		every.line = line;
 		line_number++;
 		if (get != 0)
 			execution(fd, line, &stack, line_number);
 	}
 
 	free(line);
+	myFree(stack);
 	fclose(fd);
 
 	return (0);

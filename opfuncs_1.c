@@ -14,7 +14,8 @@ void push(stack_t **stack, unsigned int line_number)
 	if (every.com == NULL || isnumber(every.com) != 0)
 	{
 		fprintf(stderr, "L%d: usage: push integer", line_number);
-		exit(EXIT_FAILURE);
+		myFree(*stack);
+		failed();
 	}
 
 	k = atoi(every.com);
@@ -60,7 +61,8 @@ void pint(stack_t **stack, unsigned int line_number)
 	if (*stack == NULL)
 	{
 		fprintf(stderr, "L%d: can't pint, stack empty\n", line_number);
-		exit(EXIT_FAILURE);
+		myFree(*stack);
+		failed();
 	}
 	printf("%d\n", (*stack)->n);
 }
@@ -79,7 +81,8 @@ void pop(stack_t **stack, unsigned int line_number)
 	if (*stack == NULL)
 	{
 		fprintf(stderr, "L%d: can't pop an empty stack\n", line_number);
-		exit(EXIT_FAILURE);
+		myFree(*stack);
+		failed();
 	}
 	ptr = *stack;
 	*stack = ptr->next;
@@ -102,7 +105,8 @@ void swap(stack_t **stack, unsigned int line_number)
 	if (*stack == NULL || (*stack)->next == NULL)
 	{
 		fprintf(stderr, "L%d: can't swap, stack too short\n", line_number);
-		exit(EXIT_FAILURE);
+		myFree(*stack);
+		failed();
 	}
 	n = (*stack)->n;
 	(*stack)->n = (*stack)->next->n;

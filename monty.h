@@ -39,6 +39,8 @@ typedef struct instruction_s
 
 /**
  * struct everywher_s - global operations
+ * @file: file
+ * @line: line
  * @com: argument
  * @mode: changes mode between stack/queue
  *
@@ -49,6 +51,8 @@ typedef struct instruction_s
 
 typedef struct everywher_s
 {
+	FILE *file;
+	char *line;
 	char *com;
 	int mode;
 } everywher_t;
@@ -62,6 +66,8 @@ void execution(FILE *file, char *line, stack_t **stack, int line_num);
 int isnumber(char *nums);
 void stack_push(stack_t **stack, int data);
 void queue_push(stack_t **queue, int data);
+void myFree(stack_t *stack);
+void failed(void);
 
 /* opfuncs */
 void pall(stack_t **stack, unsigned int line_number);

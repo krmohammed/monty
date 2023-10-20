@@ -42,6 +42,7 @@ void execution(FILE *file, char *line, stack_t **stack, int line_num)
 		fprintf(stderr, "L%d: unknown instruction %s\n", line_num, tok);
 		fclose(file);
 		free(line);
+		myFree(*stack);
 		exit(EXIT_FAILURE);
 	}
 }
@@ -65,4 +66,36 @@ int isnumber(char *nums)
 			return (1);
 	}
 	return (0);
+}
+
+
+/**
+ * myFree - frees a stack
+ * @stack: stack type
+ *
+ */
+
+void myFree(stack_t *stack)
+{
+	stack_t *tmp;
+
+	while(stack)
+	{
+		tmp = stack;
+		stack = stack->next;
+		free(tmp);
+	}
+}
+
+
+/**
+ * failed - exits
+ *
+ */
+
+void failed(void)
+{
+	fclose(every.file);
+	free(every.line);
+	exit(EXIT_FAILURE);
 }
