@@ -1,4 +1,4 @@
-#include "main.h"
+#include "monty.h"
 
 everywher_t every = {NULL, 1};
 
