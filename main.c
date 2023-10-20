@@ -1,14 +1,6 @@
 #include "main.h"
-#include <stdio.h>
 
-/**
- * main - entry point to program
- * @argc: argument count
- * @argv: argument vector
- *
- * Return: 0 always
- *
- */
+everywher_t every = {NULL, 1};
 
 int main(int argc, char **argv)
 {
@@ -20,16 +12,14 @@ int main(int argc, char **argv)
 	unsigned int line_number = 0;
 
 	if (argc != 2)
-	error_usage();
+		error_usage();
 
 	fd = fopen(argv[1], "r");
 	if (fd == NULL)
 		file_error(argv[1]);
-	every.file = fd;
 
 	while ((get = getline(&line, &len, fd)) != -1)
 	{
-		every.line = line;
 		line_number++;
 		if (get != 0)
 			execution(fd, line, &stack, line_number);

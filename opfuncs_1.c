@@ -9,7 +9,6 @@
 
 void push(stack_t **stack, unsigned int line_number)
 {
-	stack_t *ptr;
 	int k;
 
 	if (every.com == NULL || isnumber(every.com) != 0)
@@ -19,17 +18,11 @@ void push(stack_t **stack, unsigned int line_number)
 	}
 
 	k = atoi(every.com);
-	ptr = malloc(sizeof(stack_t));
-	if (ptr == NULL)
-		failed_malloc();
 
-	ptr->n = k;
-	ptr->prev = NULL;
-	ptr->next = *stack;
-
-	if (*stack != NULL)
-		(*stack)->prev = ptr;
-	*stack = ptr;
+	if (every.mode == 1)
+		stack_push(stack, k);
+	else
+		queue_push(stack, k);
 }
 
 /**
@@ -98,7 +91,7 @@ void pop(stack_t **stack, unsigned int line_number)
 /**
  * swap - swaps the top two elements of the stack/queue
  * @stack: stack type
- * @line_number: line number of monty file
+ * @line_number - line number of monty file
  *
  */
 

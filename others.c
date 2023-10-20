@@ -18,8 +18,8 @@ void execution(FILE *file, char *line, stack_t **stack, int line_num)
 		{"pop", pop}, {"swap", swap}, {"add", add},
 		{"nop", nop}, {"sub", sub}, {"div", division},
 		{"mod", modu}, {"mul", mul}, {"pchar", pchar},
-		{"pstr", pstr},
-		{NULL, NULL}
+		{"pstr", pstr}, {"rotl", rotl}, {"rotr", rotr},
+		{"stack", stack_mode}, {"queue", queue_mode}, {NULL, NULL}
 	};
 
 	tok = strtok(line, " \t\n");

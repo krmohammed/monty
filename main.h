@@ -1,5 +1,5 @@
-#ifndef MAIN_H
-#define MAIN_H
+#ifndef A_H
+#define A_H
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -48,19 +48,21 @@ typedef struct instruction_s
  *
  */
 
-typedef struct everywhere_s
+typedef struct everywher_s
 {
-	FILE *file;
-	char *line;
 	char *com;
-} everywhere_t;
-extern everywhere_t every;
+	int mode;
+} everywher_t;
 
-void error_usage(void);
-void failed_malloc(void);
+extern everywher_t every;
+
+void error_usage();
+void failed_malloc();
 void file_error(char *filename);
 void execution(FILE *file, char *line, stack_t **stack, int line_num);
 int isnumber(char *nums);
+void stack_push(stack_t **stack, int data);
+void queue_push(stack_t **queue, int data);
 
 /* opfuncs */
 void pall(stack_t **stack, unsigned int line_number);
@@ -76,5 +78,11 @@ void modu(stack_t **stack, unsigned int line_number);
 void mul(stack_t **stack, unsigned int line_number);
 void pchar(stack_t **stack, unsigned int line_number);
 void pstr(stack_t **stack, unsigned int line_number);
+void rotl(stack_t **stack, unsigned int line_number);
+void rotr(stack_t **stack, unsigned int line_number);
+void stack_mode(stack_t **stack, unsigned int line_number);
+void queue_mode(stack_t **queue, unsigned int line_number);
+
+
 
 #endif

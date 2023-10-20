@@ -5,7 +5,7 @@
  *
  */
 
-void error_usage(void)
+void error_usage()
 {
 	fprintf(stderr, "USAGE: monty file\n");
 	exit(EXIT_FAILURE);
@@ -16,7 +16,7 @@ void error_usage(void)
  *
  */
 
-void failed_malloc(void)
+void failed_malloc()
 {
 	fprintf(stderr, "Error: malloc failed\n");
 	exit(EXIT_FAILURE);

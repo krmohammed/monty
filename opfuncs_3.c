@@ -63,7 +63,7 @@ void pstr(stack_t **stack, unsigned int line_number)
 		putchar('\n');
 
 	tmp = *stack;
-	while (tmp && tmp->n != 0)
+	while(tmp && tmp->n != 0)
 	{
 		if ((*stack)->n >= 0 || (*stack)->n <= 127)
 		{
@@ -73,4 +73,54 @@ void pstr(stack_t **stack, unsigned int line_number)
 		else
 			return;
 	}
+}
+
+
+/**
+ * rotl - pushes top element to the last
+ * @stack: stack type
+ * @line_number: line number of monty file
+ *
+ */
+
+void rotl(stack_t **stack, unsigned int line_number)
+{
+	stack_t *tmp;
+
+	(void)line_number;
+	if (*stack == NULL || (*stack)->next == NULL)
+		return;
+	tmp = *stack;
+	while(tmp->next != NULL)
+		tmp = tmp->next;
+	tmp->next = *stack;
+	(*stack)->prev = tmp;
+	*stack = (*stack)->next;
+	(*stack)->prev->next = NULL;
+	(*stack)->prev = NULL;
+}
+
+
+/**
+ * rotr - pushes top element to the last
+ * @stack: stack type
+ * @line_number: line number of monty file
+ *
+ */
+
+void rotr(stack_t **stack, unsigned int line_number)
+{
+	stack_t *tmp;
+
+	(void)line_number;
+	if (*stack == NULL || (*stack)->next == NULL)
+		return;
+	tmp = *stack;
+	while(tmp->next != NULL)
+		tmp = tmp->next;
+	tmp->next = *stack;
+	(*stack)->prev = tmp;
+	tmp->prev->next = NULL;
+	tmp->prev = NULL;
+	*stack = tmp;
 }
