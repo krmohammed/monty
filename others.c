@@ -79,7 +79,7 @@ void myFree(stack_t *stack)
 {
 	stack_t *tmp;
 
-	while(stack)
+	while (stack)
 	{
 		tmp = stack;
 		stack = stack->next;
