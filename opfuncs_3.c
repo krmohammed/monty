@@ -47,7 +47,7 @@ void pchar(stack_t **stack, unsigned int line_number)
 		myFree(*stack);
 		failed();
 	}
-	putchar((*stack)->n);
+	printf("%c\n", (*stack)->n);
 }
 
 /**
@@ -75,6 +75,7 @@ void pstr(stack_t **stack, unsigned int line_number)
 		else
 			return;
 	}
+	putchar('\n');
 }
 
 
