@@ -51,7 +51,7 @@ void pchar(stack_t **stack, unsigned int line_number)
 }
 
 /**
- * pstr - prints the top/front of stack/queue
+ * pstr - prints the each element as a char str (ascii format)
  * @stack: stack type
  * @line_number: line number of monty file
  *
